@@ -1,0 +1,27 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+dev-dist/
+coverage/
+*.tsbuildinfo
+
+# Tauri (futuro)
+src-tauri/target/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# SO / editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
