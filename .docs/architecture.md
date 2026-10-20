@@ -1,6 +1,6 @@
 # Arquitetura
 
-> Status: **planejada** (nenhum código ainda).
+> Status: camadas de **domínio** e **dados** implementadas (etapa 1); **UI** e serviços/hooks ainda pendentes.
 
 ## Visão geral
 
@@ -20,6 +20,20 @@ UI (React)  →  Hooks/serviços  →  Domínio (funções puras)  →  Reposit�
 | Dados | Dexie sobre IndexedDB; exportação/importação JSON |
 
 A lógica de domínio **não depende** de React nem do banco, para ser testada com testes unitários.
+
+### Estrutura de pastas
+
+| Pasta/arquivo | Conteúdo |
+|---|---|
+| `src/domain/types.ts` | Tipos (`Habit`, `Completion`, `TimeSession`, `PomodoroSkip`, `Settings`) |
+| `src/domain/dates.ts` | `toDateKey`, `weekdayOf`, `addDays`, `startOfWeek`, `weekDates` |
+| `src/domain/schedule.ts` | `isScheduledOn`, `habitsScheduledOn`, `isCompleted`, `pomodoroListFor` |
+| `src/domain/metrics.ts` | `weeklyProgress`, `weeklyMessage`, `totalTimeSec`, `formatDuration` |
+| `src/data/db.ts` | Schema Dexie (`ProductivityDB`) e `requestPersistentStorage` |
+| `src/data/repositories.ts` | `createRepositories(db)`: hábitos, conclusões, skips, sessões, configurações |
+| `src/data/backup.ts` | `exportBackup` / `importBackup` (JSON versionado) |
+
+Os testes ficam ao lado do código (`*.test.ts`). Os repositórios recebem o `db` por parâmetro, o que permite testá-los com `fake-indexeddb`.
 
 ## Stack
 

@@ -2,7 +2,7 @@
 
 Aplicativo pessoal de produtividade que reúne **hábitos**, **controle de tempo** e **Pomodoro** em um só lugar, com funcionamento **100% offline**.
 
-> **Status:** 🚧 Fase de planejamento. Ainda não há código de aplicação. Veja o [roadmap](.docs/roadmap.md).
+> **Status:** 🚧 Em desenvolvimento. A base do projeto (PWA, camada de dados e regras de domínio testadas) está pronta; **ainda não há telas**. Veja o [roadmap](.docs/roadmap.md).
 
 ## Funcionalidades planejadas
 
@@ -37,7 +37,24 @@ Toda a documentação vive em [`.docs/`](.docs/README.md) e **deve ser atualizad
 
 ## Como rodar
 
-_Ainda não aplicável — será preenchido na etapa 1 do roadmap._
+Requer Node.js 20+.
+
+```bash
+npm install
+npm run dev        # servidor de desenvolvimento
+npm test           # testes (Vitest)
+npm run lint       # Oxlint
+npm run build      # build de produção (gera o Service Worker/PWA)
+npm run preview    # serve o build para testar a PWA offline
+```
+
+### Estrutura
+
+```
+src/domain/   regras puras e testadas (datas, agendamento, métricas, tempo)
+src/data/     Dexie/IndexedDB, repositórios e backup JSON
+src/App.tsx   UI (placeholder por enquanto)
+```
 
 ## Licença
 
