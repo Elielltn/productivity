@@ -20,7 +20,7 @@ Atualize esta tabela ao concluir cada etapa.
 | Sub | Descrição | Status |
 |---|---|---|
 | 2.1 | Validação de hábito (domínio puro + testes) | ✅ |
-| 2.2 | Hook de acesso aos hábitos (`dexie-react-hooks`) | ⬜ |
+| 2.2 | Hook de acesso aos hábitos (`dexie-react-hooks`) | ✅ |
 | 2.3 | Formulário de hábito com seletor de dias | ⬜ |
 | 2.4 | Lista de hábitos: editar e arquivar | ⬜ |
 | 2.5 | Estilos, revisão e fechamento (README, CHANGELOG) | ⬜ |
